@@ -13,7 +13,7 @@ const { calcDistance, calcDistanceMatrix } = (() => {
   const getAlphabetSize = (seqs, opts) => {
     let alphabetSize = opts.alphabetSize
     if (!alphabetSize) {
-      switch ((opts.type || 'DNA').toUpperCase()) {
+      switch ((opts.alphabet || 'DNA').toUpperCase()) {
       case 'PROTEIN':
       case 'AMINO':
         alphabetSize = 20;
@@ -45,10 +45,10 @@ const { calcDistance, calcDistanceMatrix } = (() => {
     for (let i = 0; i < seqs[0].length; ++i)
       if (seqs[0][i] != seqs[1][i])
         ++diffs
-    const frac = diffs / len, maxFrac = (alphabetSize - 1) / alphabetSize
-    if (frac >= maxFrac)
+    const frac = diffs / len, eqmFrac = (alphabetSize - 1) / alphabetSize
+    if (frac >= eqmFrac)
       return Infinity
-    return -maxFrac * Math.log (1 - frac / maxFrac)
+    return Math.max (0, -eqmFrac * Math.log (1 - frac / eqmFrac))
   }
 
   const calcDistanceMatrix = (seqs, opts) => {
