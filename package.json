@@ -1,0 +1,19 @@
+{
+  "name": "jukes-cantor",
+  "version": "1.0.0",
+  "description": "Jukes-Cantor calculations",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihh/jukes-cantor.git"
+  },
+  "author": "Ian Holmes <ihholmes@gmail.com>",
+  "license": "(MIT OR BSD-3-Clause)",
+  "bugs": {
+    "url": "https://github.com/ihh/jukes-cantor/issues"
+  },
+  "homepage": "https://github.com/ihh/jukes-cantor#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
