@@ -1,6 +1,6 @@
 {
   "name": "jukes-cantor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jukes-Cantor calculations",
   "main": "index.js",
   "scripts": {},
