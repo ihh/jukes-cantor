@@ -65,5 +65,5 @@ const { calcDistance, calcDistanceMatrix } = (() => {
   return { calcDistance, calcDistanceMatrix }
 }) ()
   
-if (module)
+if (typeof(module) !== 'undefined')
   module.exports = { calcDistance, calcDistanceMatrix }
