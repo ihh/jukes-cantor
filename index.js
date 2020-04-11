@@ -62,8 +62,16 @@ const { calcDistance, calcDistanceMatrix } = (() => {
     return d
   }
 
+  const calcFiniteDistanceMatrix = (seqs, opts) => {
+    const distMatrix = calcDistanceMatrix (seqs, opts)
+    const maxFiniteElement = distMatrix.reduce ((max, row) => row.reduce ((max, elt) => elt === Infinity ? max : Math.max(max,elt), max), 0)
+    const finiteInfinityProxy = 2*maxFiniteElement + 1
+    const finiteDistMatrix = distMatrix.map ((row) => row.map ((elt) => elt === Infinity ? finiteInfinityProxy : elt))
+    return finiteDistMatrix
+  }
+
   return { calcDistance, calcDistanceMatrix }
 }) ()
   
 if (typeof(module) !== 'undefined')
-  module.exports = { calcDistance, calcDistanceMatrix }
+  module.exports = { calcDistance, calcDistanceMatrix, calcFiniteDistanceMatrix }
