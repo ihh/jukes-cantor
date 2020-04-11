@@ -1,4 +1,4 @@
-const { calcDistance, calcDistanceMatrix } = (() => {
+const { calcDistance, calcDistanceMatrix, calcFiniteDistanceMatrix } = (() => {
   const isGapChar = (c) => { return c == '-' || c == '.' }
 
   const getAlphabet = (seqs) => {
