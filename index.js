@@ -70,7 +70,7 @@ const { calcDistance, calcDistanceMatrix } = (() => {
     return finiteDistMatrix
   }
 
-  return { calcDistance, calcDistanceMatrix }
+  return { calcDistance, calcDistanceMatrix, calcFiniteDistanceMatrix }
 }) ()
   
 if (typeof(module) !== 'undefined')
